@@ -61,4 +61,5 @@ if prompt := st.chat_input("What are you looking for?"):
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
     # Add assistant response to chat history
+    # sending full response at once to avoid duplication
     st.session_state.messages.append({"role": "assistant", "content": full_response})
