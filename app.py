@@ -10,10 +10,7 @@ with st.sidebar:
         [
             "mistralai/Mistral-7B-Instruct-v0.3",
             "mistralai/Mistral-7B-Instruct-v0.2",
-            "google/flan-t5-large", 
-            "tiiuae/falcon-7b-instruct",
             "HuggingFaceH4/zephyr-7b-beta",
-            "google/gemma-3-270m"
 
         ],
         index=0  # default selected
@@ -46,7 +43,7 @@ if prompt := st.chat_input("What are you looking for?"):
         
         if huggingface_api_key :
             try :
-                assistant_response = bot(prompt, huggingface_api_key)
+                assistant_response = bot(prompt, huggingface_api_key, model_name)
             except Exception as e:
                 st.error(f"Error: {e}")
                 assistant_response = "An error occurred. Please try again."
@@ -61,5 +58,5 @@ if prompt := st.chat_input("What are you looking for?"):
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
     # Add assistant response to chat history
-    # sending full response at once to avoid duplication
+    #
     st.session_state.messages.append({"role": "assistant", "content": full_response})

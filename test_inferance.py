@@ -1,9 +1,9 @@
 from huggingface_hub import InferenceClient
 
-def bot(prompt, hf_token) :
+def bot(prompt, hf_token, model_name) :
     
     client = InferenceClient(
-        model = "mistralai/Mistral-7B-Instruct-v0.3",
+        model = model_name,
         token = hf_token
     )
      
