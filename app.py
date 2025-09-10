@@ -11,6 +11,8 @@ with st.sidebar:
             "mistralai/Mistral-7B-Instruct-v0.3",
             "mistralai/Mistral-7B-Instruct-v0.2",
             "HuggingFaceH4/zephyr-7b-beta",
+            "meta-llama/Meta-Llama-3.1-8B-Instruct",
+            "meta-llama/Meta-Llama-3.1-70B-Instruct"
 
         ],
         index=0  # default selected
